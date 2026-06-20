@@ -64,6 +64,13 @@ DeepLearning/
 │   ├── main.py
 │   └── database.py
 │
+├── assets/
+│   ├── fastapi-docs.png
+│   ├── fastapi-history.png
+│   ├── fastapi-predict.png
+│   ├── streamlit-prediction.png
+│   └── streamlit-history.png
+│
 ├── database/
 │   └── .gitkeep
 │
@@ -100,6 +107,38 @@ Contoh response dari endpoint `/predict`:
   "confidence": 1.0
 }
 ```
+
+## Hasil Implementasi
+
+### Dokumentasi FastAPI
+
+REST API dapat diakses melalui Swagger UI. Pada halaman ini tersedia endpoint utama yang digunakan dalam sistem, yaitu `/`, `/predict`, dan `/history`.
+
+![Dokumentasi FastAPI](assets/fastapi-docs.png)
+
+### Pengujian Endpoint `/predict`
+
+Endpoint `/predict` digunakan untuk menerima input berupa gambar daun jagung. Setelah gambar diunggah, API melakukan preprocessing gambar, menjalankan model MobileNetV2, dan mengembalikan hasil prediksi beserta confidence score.
+
+![Pengujian Endpoint Predict](assets/fastapi-predict.png)
+
+### Pengujian Endpoint `/history`
+
+Endpoint `/history` digunakan untuk menampilkan riwayat prediksi yang tersimpan di database SQLite. Data yang ditampilkan meliputi nama file, hasil prediksi, confidence score, dan waktu prediksi.
+
+![Pengujian Endpoint History](assets/fastapi-history.png)
+
+### Tampilan Streamlit
+
+Aplikasi Streamlit digunakan sebagai antarmuka pengguna untuk mengunggah gambar daun jagung dan menampilkan hasil prediksi secara langsung.
+
+![Tampilan Prediksi Streamlit](assets/streamlit-prediction.png)
+
+### Riwayat Prediksi pada Streamlit
+
+Selain menampilkan hasil prediksi, aplikasi Streamlit juga menyediakan fitur untuk melihat riwayat prediksi yang diambil dari database melalui API.
+
+![Riwayat Prediksi Streamlit](assets/streamlit-history.png)
 
 ## Instalasi
 
